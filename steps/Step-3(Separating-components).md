@@ -15,7 +15,7 @@ Conceptually, components are like JavaScript functions. They accept arbitrary in
 
 ## 📚 Tasks
 
-Let's start by creaing a new `src/PokeCard.js` file to contain a new `PokeCard` component:
+Let's start by creaing a new folder in `src` called `components`. Afterwards create the file `src/components/PokeCard.js`:
 
 ```javascript
 import React from 'react';
@@ -31,12 +31,13 @@ Next, move over the card UI into the component:
 
 ```javascript
 import React from 'react';
-import { Col, Space } from 'antd';
+import { Button, Card, Col, Space } from 'antd';
 import {
   getBackgroundType,
   getPokemonImage,
   getType
 } from 'helper/pokemonHelpers';
+import styled from 'styled-components';
 
 const PokeCard = () => {
   return (
