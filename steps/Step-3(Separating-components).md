@@ -15,6 +15,8 @@ Conceptually, components are like JavaScript functions. They accept arbitrary in
 
 ## 📚 Tasks
 
+## PokeCard
+
 Let's start by creaing a new folder in `src` called `components`. Afterwards create the file `src/components/PokeCard.js`:
 
 ```javascript
@@ -94,4 +96,100 @@ return (
     </Row>
   </StyledContainer>
 );
+```
+
+## PokeType
+
+Since we will be reusing the Pokemon's type, lets also create a component for that too.
+
+Lets start by making a `src/components/PokeType.js` file with:
+
+```javascript
+import * as React from 'react';
+
+const PokeType = () => {
+  return null;
+};
+
+export default PokeType;
+```
+
+Next copy over the types components from `src/components/PokeCard` into PokeType:
+
+```javascript
+import * as React from 'react';
+import { Button } from 'antd';
+import styled from 'styled-components';
+import { uppercaseWord } from 'helper/shared';
+import { getType } from 'helper/pokemonHelpers';
+
+const StyledButton = styled(Button)`
+  background-color: ${props => props.typeName};
+  color: white;
+  border: none;
+  width: ${props => props.width}%;
+  margin-right: 5px;
+  margin-top: 5px;
+`;
+
+const PokeType = () => {
+  return (
+    <StyledButton
+      typeName={getType('grass')}
+      width={'100'}
+      shape='round'
+      size='small'
+    >
+      Grass
+    </StyledButton>
+  );
+};
+
+export default PokeType;
+```
+
+Right now the PokeType will always be grass, so lets make it more dynamic with props. Props are just values that can be passed into other components:
+
+```javascript
+const PokeType = props => {
+  return (
+    <StyledButton
+      typeName={getType(props.type)}
+      width={props.width}
+      shape='round'
+      size='small'
+    >
+      {props.type}
+    </StyledButton>
+  );
+};
+```
+
+Finally all we have to do in the `PokeCard` component is to import `PokeType` and pass in the correct props:
+
+```javascript
+import React from 'react';
+import { Card, Col, Space } from 'antd';
+import { getBackgroundType, getPokemonImage } from 'helper/pokemonHelpers';
+import PokeType from 'components/PokeType';
+import styled from 'styled-components';
+
+const PokeCard = () => {
+  return (
+    <Col span={8}>
+      <StyledCard typeName={getBackgroundType('grass')}>
+        <Space align='start'>
+          <div>
+            <StyledTitle>Bulbasaur</StyledTitle>
+            <PokeType type='grass' width={'100'} />
+            <PokeType type='poison' width={'100'} />
+          </div>
+          <StyledImage alt='' src={getPokemonImage('1')} />
+        </Space>
+      </StyledCard>
+    </Col>
+  );
+};
+
+export default PokeCard;
 ```
