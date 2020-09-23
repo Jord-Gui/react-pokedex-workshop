@@ -120,8 +120,8 @@ Next copy over the types components from `src/components/PokeCard` into PokeType
 import * as React from 'react';
 import { Button } from 'antd';
 import styled from 'styled-components';
-import { uppercaseWord } from 'helper/shared';
 import { getType } from 'helper/pokemonHelpers';
+import { uppercaseWord } from 'helper/shared';
 
 const StyledButton = styled(Button)`
   background-color: ${props => props.typeName};
@@ -165,7 +165,7 @@ const PokeType = props => {
 };
 ```
 
-Finally all we have to do in the `PokeCard` component is to import `PokeType` and pass in the correct props:
+Finally all we have to do in the `PokeCard`, is to import `PokeType` and pass in the correct props:
 
 ```javascript
 import React from 'react';
