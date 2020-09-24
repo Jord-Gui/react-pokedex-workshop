@@ -52,7 +52,7 @@ const StyledTitle = styled.h2`
 const App = () => {
   const [pokemon, setPokemon] = useState([]);
   const name = 'Bryan Wong';
-
+ 
   useEffect(() => {
     const fetchPokemon = async () => {
       try {
