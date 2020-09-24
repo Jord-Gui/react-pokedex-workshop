@@ -12,7 +12,6 @@ const StyledContainer = styled.div`
 
 const App = () => {
   const [pokemon, setPokemon] = useState([]);
-  const name = 'Bryan Wong';
 
   useEffect(() => {
     const fetchPokemon = async () => {
