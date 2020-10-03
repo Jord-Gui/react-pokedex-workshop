@@ -1,10 +1,10 @@
-# Step 3 - API
+# Step 4 - API
 
 After creating a cool looking card we need to populate it with real time data instead of static data.
 
 ## 🥇 Goal
 
-- Retrieve a list of Pokemon Data and have it be displayed through the PokeCard that we created. We will do this with fetch and ES6 promises to get data from the Poke Api and save it in the app's state.
+The goal of this step is to retrieve a list of Pokemon Data and have it be displayed through the PokeCard that we created. We will do this with fetch and ES6 promises to get data from the Poke Api and save it in the app's state.
 
 ## 🎬 Concepts
 
@@ -14,17 +14,15 @@ After creating a cool looking card we need to populate it with real time data in
 
 ## 📚 Tasks
 
-Import the `loadPokemon` from `helper/pokemonHelpers`. Also import `useEffect` and `useState` functions from React. Afterwards call `loadPokemon()` in `useEffect`. `useEffect` is called whenever the component gets rendered on the page:
+Import the `loadPokemon` from `helper/pokemonHelpers`. Also import [useEffect](https://reactjs.org/docs/hooks-effect.html) and [useState](https://reactjs.org/docs/hooks-state.html) functions from React. Afterwards call `loadPokemon()` in `useEffect`. `useEffect` is called whenever the component gets rendered on the page:
 
 ```javascript
 import React, { useState, useEffect } from 'react';
 import { getBackgroundType, getType, loadPokemon } from 'helper/pokemonHelpers';
 
 const App = () => {
-  const name = 'Bryan Wong';
-
   useEffect(() => {
-    const fetcPokemon = async () => {
+    const fetchPokemon = async () => {
       try {
         const pokemonResults = await loadPokemon();
         console.log(pokemonResults);
@@ -52,7 +50,6 @@ In order to render the Pokemon data and images, we need to save the results in s
 ```javascript
 const App = () => {
   const [pokemon, setPokemon] = useState([]);
-  const name = 'Bryan Wong';
 
   useEffect(() => {
     const fetchPokemon = async () => {
@@ -75,3 +72,7 @@ const App = () => {
   );
 };
 ```
+
+## 👉🏾 Next Step
+
+Go to [Step 5 - API Integration](https://github.com/wongband/react-pokedex-workshop/blob/master/steps/Step-5.md)

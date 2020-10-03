@@ -1,6 +1,11 @@
+<<<<<<< HEAD
 import React, { useEffect, useState } from 'react';
 import { Row } from 'antd';
 import { loadPokemon } from 'helper/pokemonHelpers';
+=======
+import React from 'react';
+import { Button, Card } from 'antd';
+>>>>>>> 45e66452e4488725359a71bcf96e15964d651ab1
 import styled from 'styled-components';
 import PokeCard from 'components/PokeCard';
 

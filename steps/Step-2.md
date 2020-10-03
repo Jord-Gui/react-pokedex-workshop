@@ -4,8 +4,7 @@ We currently created a basic Pokemon card, but it looks not the best currently. 
 
 ## 🥇 Goal
 
-- Practice with styled-components
-- More practice with JSX
+The goal of this step is to practice using styled-components to style components. This step is also used to continue practicing JSX syntax.
 
 ## 🎬 Concepts
 
@@ -14,7 +13,7 @@ We currently created a basic Pokemon card, but it looks not the best currently. 
 
 ## 📚 Tasks
 
-In the same `src/App.js` file, there already should be a variable called `StyledCard`. Lets apply the style like so:
+[Styled components](https://styled-components.com/) is used to style elements and components in a very easy way. In the same `src/App.js` file, there already should be a variable called `StyledCard`. Lets apply the style like so:
 
 ```javascript
 const App = () => {
@@ -22,8 +21,6 @@ const App = () => {
 
   return (
     <div>
-      <h1>Hi there, my name is {name}! Welcome to my Pokedex!</h1>
-      <p>Hi Im a paragraph in React</p>
       <StyledCard>
         <img alt='' src={getPokemonImage('1')} />
       </StyledCard>
@@ -47,12 +44,8 @@ const StyledImage = styled.img`
 `;
 
 const App = () => {
-  const name = 'Bryan Wong';
-
   return (
     <StyledContainer>
-      <h1>Hi there, my name is {name}! Welcome to my Pokedex!</h1>
-      <p>Hi Im a paragraph in React</p>
       <StyledCard>
         <StyledImage alt='' src={getPokemonImage('1')} />
       </StyledCard>
@@ -61,16 +54,16 @@ const App = () => {
 };
 ```
 
-Now we can continue formatting the Pokedex so it can be formatted in rows:
+Afterwards import the [Row](https://ant.design/components/grid/), [Col](https://ant.design/components/grid/) and [Space](https://ant.design/components/space/) component from Ant Design. Now we can continue formatting the Pokedex so it can be formatted in rows:
 
 ```javascript
+import { Card, Col, Row, Space } from 'antd';
+
 const App = () => {
   const name = 'Bryan Wong';
 
   return (
     <StyledContainer>
-      <h1>Hi there, my name is {name}! Welcome to my Pokedex!</h1>
-      <p>Hi Im a paragraph in React</p>
       <Row>
         <Col span={8}>
           <StyledCard>
@@ -83,7 +76,7 @@ const App = () => {
 };
 ```
 
-After getting the Row and Column done we can format how the card looks like with the Space component from Ant Design:
+After getting the [Row](https://ant.design/components/grid/) and [Col](https://ant.design/components/grid/) done we can format how the card looks like with the [Space](https://ant.design/components/space/) component from Ant Design:
 
 ```javascript
 const StyledTitle = styled.h2`
@@ -95,8 +88,6 @@ const App = () => {
 
   return (
     <StyledContainer>
-      <h1>Hi there, my name is {name}! Welcome to my Pokedex!</h1>
-      <p>Hi Im a paragraph in React</p>
       <Row>
         <Col span={8}>
           <StyledCard>
@@ -124,8 +115,6 @@ const App = () => {
 
   return (
     <StyledContainer>
-      <h1>Hi there, my name is {name}! Welcome to my Pokedex!</h1>
-      <p>Hi Im a paragraph in React</p>
       <Row>
         <Col span={8}>
           <StyledCard typeName={getBackgroundType('grass')}>
@@ -160,8 +149,6 @@ const App = () => {
 
   return (
     <StyledContainer className='site-card-wrapper'>
-      <h1>Hi there, my name is {name}! Welcome to my Pokedex!</h1>
-      <p>Hi Im a paragraph in React</p>
       <Row>
         <Col span={8}>
           <StyledCard typeName={getBackgroundType('grass')}>
@@ -194,3 +181,7 @@ const App = () => {
   );
 };
 ```
+
+## 👉🏾 Next Step
+
+Go to [Step 3 - Components](https://github.com/wongband/react-pokedex-workshop/blob/master/steps/Step-3.md)
