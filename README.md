@@ -17,7 +17,7 @@ npm --version
 ```
 
 If no error pops up then you are good to go!
-
+ 
 # Setup
 
 After getting the proper tools installed, you can setup your application with the following commands:
