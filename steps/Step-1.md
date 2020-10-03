@@ -6,8 +6,7 @@ Unlike browser DOM elements, React elements are plain objects, and are cheap to 
 
 ## 🥇 Goal
 
-- Practice with JSX
-- Practice using third party React UI libraries
+The goal of this step is to practice using JSX syntax by adding elements to the `src/App.js` file. This step also serves to learn how to use React UI Libraries to lessen the amount of work you need to do when it comes to styling elements.
 
 ## 🎬 Concepts
 
@@ -19,18 +18,10 @@ Unlike browser DOM elements, React elements are plain objects, and are cheap to 
 In the `src/App.js` file, replace the `null` with some JSX. An example would be this:
 
 ```javascript
-const App = () => {
-  return <div>Hi there!</div>;
-};
-```
-
-You will need to import React in order use JSX.
-
-```javascript
 import React from 'react';
 
 const App = () => {
-  return <main>Hi there!</main>;
+  return <div>Hi there!</div>;
 };
 
 export default App;
@@ -64,7 +55,7 @@ const App = () => {
 };
 ```
 
-Now lets add some style libraries to make our lives easier. In order to use the library we must import it from the library like so:
+Now lets add some style libraries to make our lives easier. In order to use components from a library, we must import it. In our case we are going to import the [Card](https://ant.design/components/card/) component from [Ant Design](https://ant.design/).
 
 ```javascript
 import React from 'react';
@@ -120,4 +111,6 @@ const App = () => {
 };
 ```
 
+## 👉🏾 Next Step
 
+Go to [Step 2 - Styled Components](https://github.com/wongband/react-pokedex-workshop/blob/master/steps/Step-2.md)
