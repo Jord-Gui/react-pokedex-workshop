@@ -4,7 +4,7 @@ Now that we have some actual data, we can now display it.
 
 ## 🥇 Goal
 
-- The goal of this step is to display the list of Pokemon that we retrieved and display them.
+The goal of this step is to display the list of Pokemon that we retrieved and display them.
 
 ## 🎬 Concepts
 
@@ -15,22 +15,13 @@ Now that we have some actual data, we can now display it.
 ## 📚 Tasks
 
 Before displaying the array of components, lets go over how
-the JSON data looks like.
+the JSON data looks like in the network tab.
 
-For example, we can see how each data looks like through:
-
-```javascript
-pokemon.map(selectedPokemon => {
-  console.log(selectedPokemon);
-});
-```
-
-We need to convert the array of `pokemon` into an array of components so that we can render the images, name and typing.There are several ways, but the most common approach is to use `Array.prototype.map`:
+We need to convert the array of `pokemon` into an array of components so that we can render the images, name and typing.There are several ways, but the most common approach is to use [Array.prototype.map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map):
 
 ```javascript
 const App = () => {
   const [pokemon, setPokemon] = useState([]);
-  const name = 'Bryan Wong';
 
   useEffect(() => {
     const fetchPokemon = async () => {
@@ -62,7 +53,7 @@ const App = () => {
 
 We can use the `pokemon.url` to retrieve data based on a specific pokemon.
 
-NOTE: Before moving on make sure to import `useEffect` and `useState` from react. Also import loadSelectedPokemon from `helper/pokemonHelpers`.
+NOTE: Before moving on make sure to import `useEffect` and `useState` from react. Also import `loadSelectedPokemon` from `helper/pokemonHelpers`.
 
 ```javascript
 import React, { useEffect, useState } from 'react';
@@ -166,3 +157,7 @@ return (
   </Col>
 );
 ```
+
+## 👉🏾 Next Step
+
+Go to [Step 6 - Conditional Rendering](https://github.com/wongband/react-pokedex-workshop/blob/master/steps/Step-6.md)
